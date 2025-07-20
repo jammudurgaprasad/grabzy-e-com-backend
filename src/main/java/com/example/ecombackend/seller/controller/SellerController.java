@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/seller")
@@ -130,4 +131,30 @@ public class SellerController {
         return ResponseEntity.notFound().build();
 
     }
+
+    @PutMapping("/{sellerId}/approve")
+    public ResponseEntity<?> approveSeller(@PathVariable Long sellerId) {
+        Optional<Seller> optionalSeller = sellerService.findById(sellerId);
+        if (optionalSeller.isPresent()) {
+            Seller seller = optionalSeller.get();
+            seller.setApproved(true);
+            sellerService.saveSeller(seller);
+            return ResponseEntity.ok("Seller approved");
+        }
+        return ResponseEntity.notFound().build();
+    }
+
+    @PutMapping("/{sellerId}/unapprove")
+    public ResponseEntity<?> unapproveSeller(@PathVariable Long sellerId) {
+        Optional<Seller> optionalSeller = sellerService.findById(sellerId);
+        if (optionalSeller.isPresent()) {
+            Seller seller = optionalSeller.get();
+            seller.setApproved(false);
+            sellerService.saveSeller(seller);
+            return ResponseEntity.ok("Seller unapproved");
+        }
+        return ResponseEntity.notFound().build();
+    }
+
+
 }
