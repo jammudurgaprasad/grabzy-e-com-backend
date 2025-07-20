@@ -1,26 +1,26 @@
-# === STAGE 1: Build the application ===
-FROM maven:3.8.5-openjdk-17 AS build
+# === STAGE 1: Build the application with Maven and Java 21 ===
+FROM maven:3.9.6-eclipse-temurin-21 AS build
 
-# Set working directory inside container
+# Set working directory
 WORKDIR /app
 
 # Copy all project files into the container
 COPY . .
 
-# Package the application (skip tests to speed up build)
+# Package the application (skip tests for faster builds)
 RUN mvn clean package -DskipTests
 
-# === STAGE 2: Run the application ===
-FROM eclipse-temurin:17-jdk
+# === STAGE 2: Run the packaged application with Java 21 ===
+FROM eclipse-temurin:21-jdk
 
-# Set working directory in the runtime container
+# Set working directory
 WORKDIR /app
 
-# Copy the built jar from the build stage
+# Copy the JAR file from the build stage
 COPY --from=build /app/target/*.jar app.jar
 
-# Expose the port your Spring Boot app listens on (default 8080)
+# Expose the port your Spring Boot app uses
 EXPOSE 8080
 
-# Start the application
+# Command to run the application
 CMD ["java", "-jar", "app.jar"]
