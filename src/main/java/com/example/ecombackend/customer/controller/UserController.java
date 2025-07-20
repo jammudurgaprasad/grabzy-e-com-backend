@@ -48,7 +48,7 @@ public class UserController {
                     .secure(true) // Set to true in production
                     .path("/")
                     .maxAge(7 * 24 * 60 * 60)
-                    .sameSite("Strict")
+                    .sameSite("None")
                     .build();
 
             return ResponseEntity.ok()
@@ -67,7 +67,7 @@ public class UserController {
                 .secure(true) // true in production
                 .path("/")
                 .maxAge(0)
-                .sameSite("Strict")
+                .sameSite("None")
                 .build();
 
         return ResponseEntity.ok()
