@@ -45,7 +45,7 @@ public class DeliveryAgentController {
 
             ResponseCookie cookie = ResponseCookie.from("agentJwt", token)
                     .httpOnly(true)
-                    .secure(false) // Set to true in production
+                    .secure(true) // Set to true in production
                     .path("/")
                     .maxAge(7 * 24 * 60 * 60)
                     .sameSite("Strict")
@@ -64,7 +64,7 @@ public class DeliveryAgentController {
     public ResponseEntity<?> logout() {
         ResponseCookie cookie = ResponseCookie.from("agentJwt", "")
                 .httpOnly(true)
-                .secure(false)
+                .secure(true)
                 .path("/")
                 .maxAge(0)
                 .sameSite("Strict")

@@ -44,7 +44,7 @@ public class SellerController {
 
             ResponseCookie cookie = ResponseCookie.from("sellerJwt", sellerToken)
                     .httpOnly(true)
-                    .secure(false) // Set to true in production
+                    .secure(true) // Set to true in production
                     .path("/")
                     .maxAge(7*24*60*60)
                     .sameSite("Strict")
@@ -62,7 +62,7 @@ public class SellerController {
     public ResponseEntity<?> logout() {
         ResponseCookie cookie = ResponseCookie.from("sellerJwt", "")
                 .httpOnly(true)
-                .secure(false) // true in production
+                .secure(true) // true in production
                 .path("/")
                 .maxAge(0)
                 .sameSite("Strict")

@@ -45,7 +45,7 @@ public class UserController {
 
             ResponseCookie cookie = ResponseCookie.from("jwt", token)
                     .httpOnly(true)
-                    .secure(false) // Set to true in production
+                    .secure(true) // Set to true in production
                     .path("/")
                     .maxAge(7 * 24 * 60 * 60)
                     .sameSite("Strict")
@@ -64,7 +64,7 @@ public class UserController {
     public ResponseEntity<?> logout() {
         ResponseCookie cookie = ResponseCookie.from("jwt", "")
                 .httpOnly(true)
-                .secure(false) // true in production
+                .secure(true) // true in production
                 .path("/")
                 .maxAge(0)
                 .sameSite("Strict")
