@@ -15,7 +15,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/delivery-agents")
-@CrossOrigin(origins = "http://localhost:3000", allowCredentials = "true")
+@CrossOrigin(origins = {"https://dpgrabzy.netlify.app","https://dpgrabzyhub.netlify.app"}, allowCredentials = "true")
 public class DeliveryAgentController {
 
     private final DeliveryAgentService deliveryAgentService;
