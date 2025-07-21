@@ -14,6 +14,7 @@ public class Product {
     private Double actualPrice;
     private Double discountPercentage;
     private Double discountPrice;
+    @Lob
     private String description;
     private String category;
     private String subCategory;
