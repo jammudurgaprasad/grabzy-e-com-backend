@@ -29,6 +29,7 @@ public class Order {
     private Double actualPrice;
     private Double discountPercentage;
     private Double discountPrice;
+    @Lob
     private String description;
     private String size;         // size chosen at checkout
 
