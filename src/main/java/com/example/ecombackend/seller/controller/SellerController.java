@@ -15,7 +15,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/seller")
-@CrossOrigin(origins = {"https://dpgrabzy.netlify.app","https://dpgrabzyhub.netlify.app","https://grabzy-e-com-frontend.vercel.app/","https://grabzy-hub-e-com-frontend.vercel.app/"}, allowCredentials = "true")
+@CrossOrigin(origins = {"http://localhost:3000","https://grabzy-e-com-frontend.vercel.app/","https://grabzy-hub-e-com-frontend.vercel.app/"}, allowCredentials = "true")
 public class SellerController {
 
     private final SellerService sellerService;
