@@ -8,7 +8,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/carts")
-@CrossOrigin(origins = {"https://dpgrabzy.netlify.app","https://dpgrabzyhub.netlify.app"}, allowCredentials = "true")
+@CrossOrigin(origins = {"https://dpgrabzy.netlify.app","https://dpgrabzyhub.netlify.app","https://grabzy-e-com-frontend.vercel.app/"}, allowCredentials = "true")
 public class CartController {
 
     private final CartService cartService;
