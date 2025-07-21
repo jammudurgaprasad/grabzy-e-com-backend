@@ -12,7 +12,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/payments")
-@CrossOrigin(origins = "http://localhost:3000", allowCredentials = "true")
+@CrossOrigin(origins = {"http://localhost:3000","https://grabzy-e-com-frontend.vercel.app","https://grabzy-hub-e-com-frontend.vercel.app"}, allowCredentials = "true")
 public class PaymentController {
 
     @PostMapping("/create-order")
