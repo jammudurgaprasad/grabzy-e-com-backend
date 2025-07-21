@@ -34,6 +34,7 @@ public class Order {
 
     /* ------------  shipping address snapshot  ------------ */
     private String receiverName;
+    @Column(name = "phone_number")
     private String phoneNumber;
     private String address;
     private String city;
