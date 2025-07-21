@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/seller-orders")
-@CrossOrigin(origins = {"https://dpgrabzy.netlify.app","https://dpgrabzyhub.netlify.app","https://grabzy-e-com-frontend.vercel.app/"}, allowCredentials = "true")
+@CrossOrigin(origins = {"https://dpgrabzy.netlify.app","https://dpgrabzyhub.netlify.app","https://grabzy-e-com-frontend.vercel.app/","https://grabzy-hub-e-com-frontend.vercel.app/"}, allowCredentials = "true")
 public class SellerOrdersController {
 
     @Autowired
