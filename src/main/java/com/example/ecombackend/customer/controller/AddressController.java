@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/addresses")
-@CrossOrigin(origins = {"http://localhost:3000","https://grabzy-e-com-frontend.vercel.app","https://grabzy-hub-e-com-frontend.vercel.app"}, allowCredentials = "true")
+@CrossOrigin(origins = {"http://localhost:3000","https://grabzy-hub-e-com-frontend.netlify.app","https://grabzy-e-com-frontend.vercel.app","https://grabzy-hub-e-com-frontend.vercel.app"}, allowCredentials = "true")
 public class AddressController {
 
     private final AddressService addressService;
