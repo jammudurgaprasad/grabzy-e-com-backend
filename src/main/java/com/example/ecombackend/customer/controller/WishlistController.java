@@ -8,7 +8,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/wishlist")
-@CrossOrigin(origins = {"http://localhost:3000","https://grabzy-hub-e-com-frontend.netlify.app","https://grabzy-e-com-frontend.vercel.app","https://grabzy-hub-e-com-frontend.vercel.app"}, allowCredentials = "true")
+@CrossOrigin(origins = {"http://localhost:3000","https://grabzy-e-com-frontend.netlify.app","https://grabzy-hub-e-com-frontend.netlify.app","https://grabzy-e-com-frontend.vercel.app","https://grabzy-hub-e-com-frontend.vercel.app"}, allowCredentials = "true")
 public class WishlistController {
 
     private final WishlistService wishlistService;
