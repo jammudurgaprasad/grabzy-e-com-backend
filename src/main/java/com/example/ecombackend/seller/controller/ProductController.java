@@ -66,8 +66,23 @@ public class ProductController {
         return ResponseEntity.notFound().build();
     }
 
+//    @GetMapping("/seller/{sellerId}")
+//    public List<Product> getProductsBySellerId(@PathVariable Long sellerId){
+//        return productService.findBySellerId(sellerId);
+//    }
+
     @GetMapping("/seller/{sellerId}")
-    public List<Product> getProductsBySellerId(@PathVariable Long sellerId){
-        return productService.findBySellerId(sellerId);
+    public ResponseEntity<List<Product>> getProductsBySellerId(@PathVariable Long sellerId){
+        try {
+            List<Product> products = productService.findBySellerId(sellerId);
+            if (products.isEmpty()) {
+                return ResponseEntity.noContent().build(); // 204 No Content if no products
+            }
+            return ResponseEntity.ok(products);
+        } catch (Exception e) {
+            e.printStackTrace(); // Logs on server (Render)
+            return ResponseEntity.status(500).body(null); // Proper 500 response
+        }
     }
+
 }
